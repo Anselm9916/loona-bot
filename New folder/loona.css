@@ -215,6 +215,9 @@ header nav {
 
 .carousel .list .items .main-content .content {
   padding: 150px 20px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .carousel .list .items .main-content .content h2 {
@@ -262,6 +265,7 @@ header nav {
   position: relative;
   width: 280px;
   height: 70px;
+  margin-bottom: 10%;
   border-radius: 35px;
   overflow: hidden;
   cursor: pointer;
