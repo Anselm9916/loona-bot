@@ -1,6 +1,39 @@
+/* Import Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css");
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --border-color: rgba(0, 0, 0, 0.1);
+  --w-image: 550px;
+  --calculate: calc(3 / 2);
+
+  /* Colors */
+  --primary-color: #2563eb;
+  --secondary-color: #0369a1;
+  --accent-color: #f59e0b;
+  --light-color: #f8fafc;
+  --dark-color: #1e293b;
+  --text-color: #334155;
+  --light-text: #64748b;
+
+  /* Vibrant Colors */
+  --blue-vibrant: #0066ff;
+  --red-vibrant: #ff3a3a;
+  --green-vibrant: #00cc88;
+  --purple-vibrant: #9933ff;
+  --orange-vibrant: #ff7700;
+  --cyan-vibrant: #00e5ff;
+}
 
 body {
   font-family: "Inter", sans-serif;
@@ -10,36 +43,7 @@ body {
   color: #333;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-/* Update the root variables with more vibrant colors */
-:root {
-  --border-color: rgba(0, 0, 0, 0.1);
-  --w-image: 550px;
-  --calculate: calc(3 / 2);
-  --primary-color: #2563eb;
-  --secondary-color: #0369a1;
-  --accent-color: #f59e0b;
-  --light-color: #f8fafc;
-  --dark-color: #1e293b;
-  --text-color: #334155;
-  --light-text: #64748b;
-
-  /* New vibrant colors */
-  --blue-vibrant: #0066ff;
-  --red-vibrant: #ff3a3a;
-  --green-vibrant: #00cc88;
-  --purple-vibrant: #9933ff;
-  --orange-vibrant: #ff7700;
-  --cyan-vibrant: #00e5ff;
-}
-
+/* Header Styles */
 header {
   display: grid;
   grid-template-columns: 150px 1fr calc(var(--w-image) * var(--calculate));
@@ -47,8 +51,14 @@ header {
   position: relative;
   z-index: 10;
   border-bottom: 1px solid var(--border-color);
-  background-color: white;
+  background-color: #ffffff40;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header .logo img {
@@ -58,10 +68,17 @@ header .logo img {
   padding: 5px;
 }
 
-header .logo {
+header nav {
+  border-left: 1px solid var(--border-color);
+}
+
+header nav ul {
+  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  gap: 30px;
+  padding-right: 30px;
 }
 
 header nav a {
@@ -75,40 +92,7 @@ header nav a:hover {
   color: var(--primary-color);
 }
 
-header nav ul {
-  height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 30px;
-  padding-right: 30px;
-}
-
-header nav {
-  border-left: 1px solid var(--border-color);
-}
-
-/* More vibrant and distinct background colors for each slide */
-.list .items:first-child .main-content {
-  background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%); /* Enhanced blue */
-  box-shadow: inset 0 0 30px rgba(59, 130, 246, 0.1);
-}
-
-.list .items:nth-child(2) .main-content {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); /* Enhanced red */
-  box-shadow: inset 0 0 30px rgba(239, 68, 68, 0.1);
-}
-
-.list .items:nth-child(3) .main-content {
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); /* Enhanced green */
-  box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.1);
-}
-
-.list .items:nth-child(4) .main-content {
-  background: linear-gradient(135deg, #fdf4ff 0%, #f5d0fe 100%); /* Enhanced purple */
-  box-shadow: inset 0 0 30px rgba(139, 92, 246, 0.1);
-}
-
+/* Carousel Styles */
 .carousel {
   margin-top: -80px;
   width: 100%;
@@ -150,6 +134,7 @@ header nav {
   opacity: 0.05;
 }
 
+/* Carousel Items */
 .carousel .list .items {
   position: absolute;
   top: 0;
@@ -174,6 +159,28 @@ header nav {
   pointer-events: none;
 }
 
+/* Slide Background Colors */
+.list .items:nth-child(1) .main-content {
+  background: linear-gradient(135deg, #e0f2fe 0%, #4d9af8 100%);
+  box-shadow: inset 0 0 30px rgba(27, 115, 255, 0.1);
+}
+
+.list .items:nth-child(2) .main-content {
+  background: linear-gradient(135deg, #fef2f2 0%, #ffff6f 100%);
+  box-shadow: inset 0 0 30px rgba(255, 41, 41, 0.1);
+}
+
+.list .items:nth-child(3) .main-content {
+  background: linear-gradient(135deg, #fdefec 0%, hsl(157, 100%, 66%) 100%);
+  box-shadow: inset 0 0 30px rgba(8, 220, 149, 0.1);
+}
+
+.list .items:nth-child(4) .main-content {
+  background: linear-gradient(135deg, #fdf4ff 0%, #ea96ff 100%);
+  box-shadow: inset 0 0 30px rgba(112, 54, 247, 0.1);
+}
+
+/* Carousel Image */
 .carousel .list .items .image {
   width: var(--w-image);
   height: 100%;
@@ -183,7 +190,7 @@ header nav {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   font-weight: 500;
 }
@@ -195,13 +202,11 @@ header nav {
   transition: transform 0.3s ease;
 }
 
-/* Enhanced image hover effect */
 .carousel .list .items .image img:hover {
   transform: translateY(-8px);
   filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.15));
 }
 
-/* Enhanced figcaption style */
 .carousel .list .items .image figcaption {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -214,6 +219,7 @@ header nav {
   letter-spacing: -0.5px;
 }
 
+/* Carousel Content */
 .carousel .list .items .main-content {
   height: 100%;
   display: grid;
@@ -224,7 +230,6 @@ header nav {
   animation: showContent 1s ease-in-out 1 forwards;
 }
 
-/* Enhanced animation for content reveal */
 @keyframes showContent {
   from {
     clip-path: circle(0% at 70% 50%);
@@ -243,7 +248,6 @@ header nav {
   justify-content: space-between;
 }
 
-/* Enhanced heading styles */
 .carousel .list .items .main-content .content h2 {
   font-size: 2.8em;
   font-family: "Montserrat", sans-serif;
@@ -254,28 +258,27 @@ header nav {
   letter-spacing: -0.5px;
 }
 
-/* Different price colors for each product - more vibrant */
-.list .items:first-child .main-content .content .price {
-  color: var(--blue-vibrant); /* Vibrant Blue */
+/* Price Colors */
+.list .items:nth-child(1) .main-content .content .price {
+  color: var(--blue-vibrant);
   text-shadow: 0 0 10px rgba(0, 102, 255, 0.2);
 }
 
 .list .items:nth-child(2) .main-content .content .price {
-  color: var(--red-vibrant); /* Vibrant Red */
+  color: var(--red-vibrant);
   text-shadow: 0 0 10px rgba(255, 58, 58, 0.2);
 }
 
 .list .items:nth-child(3) .main-content .content .price {
-  color: var(--green-vibrant); /* Vibrant Green */
+  color: var(--green-vibrant);
   text-shadow: 0 0 10px rgba(0, 204, 136, 0.2);
 }
 
 .list .items:nth-child(4) .main-content .content .price {
-  color: var(--purple-vibrant); /* Vibrant Purple */
+  color: var(--purple-vibrant);
   text-shadow: 0 0 10px rgba(153, 51, 255, 0.2);
 }
 
-/* Enhanced price style */
 .carousel .list .items .main-content .content .price {
   font-family: "Inter", sans-serif;
   font-size: 2.2em;
@@ -284,7 +287,6 @@ header nav {
   letter-spacing: -0.5px;
 }
 
-/* Enhanced description style */
 .carousel .list .items .main-content .content .description {
   color: var(--text-color);
   line-height: 1.7;
@@ -294,7 +296,7 @@ header nav {
   font-weight: 400;
 }
 
-/* Enhanced watch video button */
+/* Watch Video Button */
 .watch-video {
   position: relative;
   width: 280px;
@@ -341,8 +343,18 @@ header nav {
   letter-spacing: 0.5px;
 }
 
-/* Different video button colors for each product - more vibrant */
-.list .items:first-child .watch-video {
+.watch-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Video Button Colors */
+/* .list .items:nth-child(1) .watch-video {
   background: linear-gradient(135deg, var(--blue-vibrant) 0%, #0055cc 100%);
   box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3), 0 0 0 2px rgba(0, 102, 255, 0.1);
 }
@@ -360,17 +372,14 @@ header nav {
 .list .items:nth-child(4) .watch-video {
   background: linear-gradient(135deg, var(--purple-vibrant) 0%, #7a29cc 100%);
   box-shadow: 0 5px 15px rgba(153, 51, 255, 0.3), 0 0 0 2px rgba(153, 51, 255, 0.1);
-}
+} */
 
-/* Enhanced arrow buttons */
+/* Navigation Arrow - Only Next Button */
 .arrows {
   position: absolute;
   top: 50%;
   right: 30px;
   transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
   z-index: 100;
 }
 
@@ -399,12 +408,82 @@ header nav {
   box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3), 0 0 0 2px rgba(37, 99, 235, 0.1);
 }
 
-/* Hide the previous button as per your previous requirements */
-#prev {
-  display: none;
+/* Slide Indicators */
+.slide-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 100;
 }
 
-/* NEXT animations */
+.slide-indicators .indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-indicators .indicator.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.slide-indicators .indicator:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Video Modal */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #ccc;
+}
+
+#modalVideo {
+  max-width: 100%;
+  max-height: 90vh;
+}
+
+/* Animation Classes */
 .next .items.other_1 {
   z-index: 1;
 }
@@ -438,39 +517,7 @@ header nav {
   --transform-from: calc(var(--w-image) * 2);
 }
 
-/* PREV animations */
-.prev .list .items .image img,
-.prev .list .items .image figcaption {
-  animation: effectPrev 0.5s ease-in-out 1 forwards;
-}
-
-@keyframes effectPrev {
-  from {
-    transform: translateX(calc(var(--transform-from)));
-  }
-  to {
-    transform: translateX(calc(var(--transform-from) + var(--w-image)));
-  }
-}
-
-/* For prev, active slides come in from left */
-.prev .list .items.active .image {
-  --transform-from: calc(var(--w-image) * -1);
-  overflow: hidden;
-}
-
-/* For prev, the left neighbor slides further left */
-.prev .list .items.other_1 .image {
-  --transform-from: calc(var(--w-image) * -2);
-  z-index: 3;
-}
-
-/* For prev, the right neighbor slides out to the right */
-.prev .list .items.other_2 .image {
-  z-index: 3;
-  --transform-from: 0px;
-}
-
+/* Responsive Styles */
 @media (max-width: 1200px) {
   .carousel .list .items .main-content .content h2 {
     font-size: 2.4em;
